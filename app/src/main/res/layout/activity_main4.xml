@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:padding="20dp"
     android:weightSum="9"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity4">
 
     <TextView
         android:id="@+id/Text"
@@ -22,23 +22,10 @@
         android:ems="10"
         android:gravity="center"
         android:inputType="textPersonName"
-        android:text="UPDATE DATA"
+        android:text="ENTER DATA"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/editTextId"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginBottom="20dp"
-        android:layout_weight="1"
-        android:height="0dp"
-        android:background="#4600BCD4"
-        android:drawableLeft="@drawable/ic_baseline_person_24"
-        android:ems="10"
-        android:hint="ID"
-        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/editTextTextPersonName"
@@ -115,6 +102,12 @@
         android:hint="Address"
         android:inputType="text" />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -133,7 +126,8 @@
             android:layout_marginRight="10dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="UPDATE"
+            android:onClick="onclic"
+            android:text="INSERT"
             app:backgroundTint="@android:color/black" />
 
 

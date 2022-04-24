@@ -2,11 +2,13 @@ package com.example.mydatabase;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME="students.db";
@@ -60,5 +62,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor res=db.rawQuery("Select * from "+TABLE_NAME,null);
         return res;
     }
+
+    public boolean updateData(String id,String name,String surname,String marks,String cnic,String bloodGroup,String address)
+    {
+        SQLiteDatabase db=this.getWritableDatabase();
+        ContentValues contentValues=new ContentValues();
+        contentValues.put(COL_1,id);
+        contentValues.put(COL_2,name);
+        contentValues.put(COL_3,surname);
+        contentValues.put(COL_4,marks);
+        contentValues.put(COL_5,cnic);
+        contentValues.put(COL_6,bloodGroup);
+        contentValues.put(COL_7,address);
+
+        db.update(TABLE_NAME,contentValues,"ID=?",new String[]{id});
+        return  true;
+
+    }
+
+
 
 }
